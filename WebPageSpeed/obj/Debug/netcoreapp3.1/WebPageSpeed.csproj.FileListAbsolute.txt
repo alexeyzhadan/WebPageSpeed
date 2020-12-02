@@ -31,3 +31,4 @@ F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.dll
 F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.pdb
 F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.genruntimeconfig.cache
 F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.csproj.CopyComplete
+F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\Razor\Views\Main\Index.cshtml.g.cs

@@ -1,1 +1,44 @@
-﻿
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Website Performance</title>
+
+    <link rel="stylesheet" href="~/css/main.css">
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="header block">
+            <div class="container">
+                <div class="header__body">
+                    <a class="header__logo" asp-controller="Main" asp-action="Index">
+                        WebPagePerformance
+                    </a>
+                    <div class="header__nav nav">
+                        <a class="nav__link" href="#">History</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="container">
+                <div class="content__body">
+
+                    @RenderBody()
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer block">
+            <div class="footer__text">
+                Test project by Alexey Zhadan. 2020
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
