@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WebPageSpeed.Services.Sitemap.Interfaces
+namespace WebPageSpeed.Services.WebPageAnalysis.Sitemap.Interfaces
 {
     public interface ISitemapDeterminator
     {

@@ -2,9 +2,9 @@
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
-using WebPageSpeed.Services.Monitoring.Interfaces;
+using WebPageSpeed.Services.WebPageAnalysis.Monitoring.Interfaces;
 
-namespace WebPageSpeed.Services.Monitoring
+namespace WebPageSpeed.Services.WebPageAnalysis.Monitoring
 {
     public class RequestMonitoring : IRequestMonitoring
     {

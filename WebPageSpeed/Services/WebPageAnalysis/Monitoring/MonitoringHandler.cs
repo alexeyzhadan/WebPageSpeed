@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace WebPageSpeed.Services.Monitoring
+namespace WebPageSpeed.Services.WebPageAnalysis.Monitoring
 {
     public class MonitoringHandler : DelegatingHandler
     {
