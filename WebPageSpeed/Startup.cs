@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebPageSpeed.Services.Monitoring.Extensions;
 using WebPageSpeed.Services.Sitemap.Extensions;
 
 namespace WebPageSpeed
@@ -11,6 +12,7 @@ namespace WebPageSpeed
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSitemapDeterminator();
+            services.AddMonitoring();
 
             services.AddControllersWithViews();
         }
