@@ -4,9 +4,9 @@ using WebPageSpeed.Data.Repositories.Extensions;
 
 namespace WebPageSpeed.Data.Extensions
 {
-    public static class WebPageSpeedContextExtension
+    public static class WebPageSpeedDataExtension
     {
-        public static IServiceCollection AddWebPageSpeedContext(this IServiceCollection services, string connectionString)
+        public static IServiceCollection AddWebPageSpeedData(this IServiceCollection services, string connectionString)
         {
             services.AddDbContext<WebPageSpeedContext>(options => options.UseSqlServer(connectionString));
             services.AddRepositories();

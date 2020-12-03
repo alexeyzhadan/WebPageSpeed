@@ -5,39 +5,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebPageSpeed.Models;
-using WebPageSpeed.Services.WebPageAnalysis.MonitoringResponseTime.Interfaces;
-using WebPageSpeed.Services.WebPageAnalysis.Sitemap.Interfaces;
+using WebPageSpeed.Services.ResponseTimeAnalysis.Interface;
+using WebPageSpeed.Services.ResponseTimeAnalysis.MonitoringResponseTime.Interfaces;
 
-namespace WebPageSpeed.Services.WebPageAnalysis
+namespace WebPageSpeed.Services.ResponseTimeAnalysis
 {
-    public class SpeedAnalyzer
+    public class ResponseTimeAnalyzer : IResponseTimeAnalyzer
     {
         private const int NUBMER_OF_ANALYZES = 3;
 
-        private readonly ISitemapDeterminator _sitemapDeterminator;
         private readonly IRequestMonitoring _requestMonitoring;
-        private readonly ILogger<SpeedAnalyzer> _logger;
+        private readonly ILogger<ResponseTimeAnalyzer> _logger;
 
-        public SpeedAnalyzer(
-            ISitemapDeterminator sitemapDeterminator,
+        public ResponseTimeAnalyzer(
             IRequestMonitoring requestMonitoring,
-            ILogger<SpeedAnalyzer> logger)
+            ILogger<ResponseTimeAnalyzer> logger)
         {
-            _sitemapDeterminator = sitemapDeterminator;
             _requestMonitoring = requestMonitoring;
             _logger = logger;
         }
 
-        public async Task<List<WebPage>> DoAnalysisOfWebSiteAsync(string uri)
+        public async Task<List<WebPage>> DoAnalysisOfWebSiteAsync(List<string> links)
         {
             var webPages = new List<WebPage>();
 
             _logger.LogInformation("Analysis was started!");
 
-            // determine sitemap
-            var links = _sitemapDeterminator.GetListOfUrls(uri);
-
-            // analyse each web pages from sitemap
             await links.ParallelForEachAsync(async link => 
             {
                 var webPage = await DoAnalysisOfWebPageAsync(link);

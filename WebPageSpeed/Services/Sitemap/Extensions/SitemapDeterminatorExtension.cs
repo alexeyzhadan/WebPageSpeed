@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using WebPageSpeed.Services.WebPageAnalysis.Sitemap.Interfaces;
+using WebPageSpeed.Services.Sitemap.Interfaces;
 
-namespace WebPageSpeed.Services.WebPageAnalysis.Sitemap.Extensions
+namespace WebPageSpeed.Services.Sitemap.Extensions
 {
     public static class SitemapDeterminatorExtension
     {

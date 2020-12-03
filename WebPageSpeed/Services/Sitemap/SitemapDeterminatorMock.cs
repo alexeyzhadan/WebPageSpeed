@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using WebPageSpeed.Services.WebPageAnalysis.Sitemap.Interfaces;
+using WebPageSpeed.Services.Sitemap.Interfaces;
 
-namespace WebPageSpeed.Services.WebPageAnalysis.Sitemap
+namespace WebPageSpeed.Services.Sitemap
 {
     public class SitemapDeterminatorMock : ISitemapDeterminator
     {

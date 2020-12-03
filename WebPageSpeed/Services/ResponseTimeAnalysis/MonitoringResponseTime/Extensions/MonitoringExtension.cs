@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using WebPageSpeed.Services.WebPageAnalysis.MonitoringResponseTime.Interfaces;
+using WebPageSpeed.Services.ResponseTimeAnalysis.MonitoringResponseTime.Interfaces;
 
-namespace WebPageSpeed.Services.WebPageAnalysis.MonitoringResponseTime.Extensions
+namespace WebPageSpeed.Services.ResponseTimeAnalysis.MonitoringResponseTime.Extensions
 {
     public static class MonitoringExtension
     {

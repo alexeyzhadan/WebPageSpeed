@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace WebPageSpeed.Services.WebPageAnalysis.MonitoringResponseTime.Interfaces
+namespace WebPageSpeed.Services.ResponseTimeAnalysis.MonitoringResponseTime.Interfaces
 {
     public interface IRequestMonitoring
     {

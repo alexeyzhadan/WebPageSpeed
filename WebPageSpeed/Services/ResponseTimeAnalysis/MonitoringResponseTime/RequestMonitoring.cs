@@ -2,9 +2,9 @@
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
-using WebPageSpeed.Services.WebPageAnalysis.MonitoringResponseTime.Interfaces;
+using WebPageSpeed.Services.ResponseTimeAnalysis.MonitoringResponseTime.Interfaces;
 
-namespace WebPageSpeed.Services.WebPageAnalysis.MonitoringResponseTime
+namespace WebPageSpeed.Services.ResponseTimeAnalysis.MonitoringResponseTime
 {
     public class RequestMonitoring : IRequestMonitoring
     {
@@ -18,8 +18,10 @@ namespace WebPageSpeed.Services.WebPageAnalysis.MonitoringResponseTime
         public async Task<TimeSpan> GetResponseTimeAsync(string uri)
         {
             var client = _httpClientFactory.CreateClient(StringConstant.MONITORING);
+
             var request = new HttpRequestMessage(HttpMethod.Get, uri);
             await client.SendAsync(request);
+
             var watcher = (Stopwatch)request.Properties[StringConstant.STOPWATCH];
             return watcher.Elapsed;
         }

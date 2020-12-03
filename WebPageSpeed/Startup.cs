@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using WebPageSpeed.Services.WebPageAnalysis.Extensions;
+using WebPageSpeed.Services.ResponseTimeAnalysis.Extensions;
 using WebPageSpeed.Data.Extensions;
+using WebPageSpeed.Services.Sitemap.Extensions;
 
 namespace WebPageSpeed
 {
@@ -21,7 +22,8 @@ namespace WebPageSpeed
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddWebPageSpeedContext(_config.GetConnectionString(DEFAULT));
+            services.AddWebPageSpeedData(_config.GetConnectionString(DEFAULT));
+            services.AddSitemapDeterminator();
             services.AddWebPageAnalysis();
             services.AddControllersWithViews();
         }

@@ -1,4 +1,4 @@
-﻿namespace WebPageSpeed.Services.WebPageAnalysis.MonitoringResponseTime
+﻿namespace WebPageSpeed.Services.ResponseTimeAnalysis.MonitoringResponseTime
 {
     public class StringConstant
     {
