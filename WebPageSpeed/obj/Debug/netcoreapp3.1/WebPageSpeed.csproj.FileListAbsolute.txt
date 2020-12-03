@@ -74,3 +74,4 @@ F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.csproj.
 F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.MvcApplicationPartsAssemblyInfo.cache
 F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.csprojAssemblyReference.cache
 F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\Razor\Views\Main\Result.cshtml.g.cs
+F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\Razor\Views\Main\History.cshtml.g.cs

@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
-using WebPageSpeed.Models.ViewModel;
+using WebPageSpeed.Data.Repositories.Interface;
 using WebPageSpeed.Services.WebSiteAnalysis.Interface;
 
 namespace WebPageSpeed.Controllers
@@ -10,10 +9,12 @@ namespace WebPageSpeed.Controllers
     public class MainController : Controller
     {
         private readonly IWebSiteAnalyzer _webSiteAnalyzer;
+        private readonly IWebSiteRepository _webSiteRepository;
 
-        public MainController(IWebSiteAnalyzer webSiteAnalyzer)
+        public MainController(IWebSiteAnalyzer webSiteAnalyzer, IWebSiteRepository webSiteRepository)
         {
             _webSiteAnalyzer = webSiteAnalyzer;
+            _webSiteRepository = webSiteRepository;
         }
 
         public IActionResult Index()
@@ -25,23 +26,27 @@ namespace WebPageSpeed.Controllers
         public async Task<IActionResult> Index(string uri)
         {
             var webSite = await _webSiteAnalyzer.DoAnalysisAsync(uri);
-            return RedirectToAction(
-                nameof(Result),
-                new { 
-                    authority = webSite.Authority,
-                    date = webSite.DateOfAnalysis
-                });
+            return RedirectToAction(nameof(Result), new { websiteId = webSite.Id });
         }
 
-        public IActionResult Result(string authority, DateTime date)
+        public async Task<ActionResult> Result(long websiteId)
         {
-            var webPagesResults = new List<WebPageResultViewModel>();
-            return View(webPagesResults);
+            var webSite = await _webSiteRepository.GetByIdWithWebPagesAsync(websiteId);
+            if (webSite == null)
+            {
+                return NotFound();
+            }
+            return View(webSite);
         }
 
-        public IActionResult History()
+        public async Task<IActionResult> History()
         {
-            return View();
+            var webSites = await _webSiteRepository.GetAllOrderedByDateDesc().ToListAsync();
+            if (webSites == null)
+            {
+                return NotFound();
+            }
+            return View(webSites);
         }
     }
 }

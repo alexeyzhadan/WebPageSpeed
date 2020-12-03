@@ -6,6 +6,6 @@ namespace WebPageSpeed.Services.ResponseTimeAnalysis.Interface
 {
     public interface IResponseTimeAnalyzer
     {
-        Task<List<AnalysisWebPage>> DoAnalysisOfWebSiteAsync(List<string> links);
+        Task<List<AnalysisOfWebPage>> DoAnalysisOfWebSiteAsync(List<string> links);
     }
 }

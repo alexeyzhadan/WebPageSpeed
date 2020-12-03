@@ -25,9 +25,9 @@ namespace WebPageSpeed.Services.ResponseTimeAnalysis
             _logger = logger;
         }
 
-        public async Task<List<AnalysisWebPage>> DoAnalysisOfWebSiteAsync(List<string> links)
+        public async Task<List<AnalysisOfWebPage>> DoAnalysisOfWebSiteAsync(List<string> links)
         {
-            var analysisWebPages = new List<AnalysisWebPage>();
+            var analysisWebPages = new List<AnalysisOfWebPage>();
 
             await links.ParallelForEachAsync(async link =>
             {
@@ -38,9 +38,9 @@ namespace WebPageSpeed.Services.ResponseTimeAnalysis
             return analysisWebPages;
         }
 
-        private async Task<AnalysisWebPage> DoAnalysisOfWebPageAsync(string uri)
+        private async Task<AnalysisOfWebPage> DoAnalysisOfWebPageAsync(string uri)
         {
-            var analysisWebPages = new AnalysisWebPage();
+            var analysisWebPages = new AnalysisOfWebPage();
             var arrayOfResponseTime = new double[NUBMER_OF_ANALYZES];
 
             TimeSpan temp;

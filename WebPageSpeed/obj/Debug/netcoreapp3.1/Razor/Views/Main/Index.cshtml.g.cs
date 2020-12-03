@@ -14,20 +14,13 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "F:\Others\WebPageSpeed\WebPageSpeed\Views\_ViewImports.cshtml"
-using WebPageSpeed;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 2 "F:\Others\WebPageSpeed\WebPageSpeed\Views\_ViewImports.cshtml"
-using WebPageSpeed.Models.ViewModel;
+using WebPageSpeed.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f57b00f818d44b51acd47fe9ee02ed8cd5defb09", @"/Views/Main/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0e42e0110a7497e0d90c37d8e5d8402a24d1f067", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"495771ee8f615835d8c030d5d788e5baa42cfaba", @"/Views/_ViewImports.cshtml")]
     public class Views_Main_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Index", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -65,7 +58,7 @@ using WebPageSpeed.Models.ViewModel;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<div class=\"content__main main\">\r\n    <div class=\"main__input input-block block block--inside\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f57b00f818d44b51acd47fe9ee02ed8cd5defb093761", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f57b00f818d44b51acd47fe9ee02ed8cd5defb093588", async() => {
                 WriteLiteral("\r\n            <input class=\"input-block__input\" placeholder=\"Enter URL...\" name=\"uri\">\r\n            <button class=\"input-block__button\">Search</button>\r\n        ");
             }
             );

@@ -1,29 +1,33 @@
-﻿@model List<WebPageResultViewModel>
+﻿@model WebSite
 @{
     ViewBag.Title = "Result";
 }
 
 <div class="content__result result">
     <div class="result__chart-block block block--inside">
-        <a class="result__exit link" asp-action="Index">Exit</a>
         <div class="result__chart-wrapper">
-
+            <canvas id="chart" class="result__chart"></canvas>
         </div>
     </div>
     <div class="result__table-block block block--inside">
         <div class="result__table-wrapper">
             <table class="result__table table">
                 <thead class="table__head">
-                    <tr><th>Id</th><th>URI</th><th>Min</th><th>Max</th></tr>
+                    <tr>
+                        <th>Id</th>
+                        <th>URI</th>
+                        <th>@Html.DisplayNameFor(model => model.WebPages[0].MinResponseTime)</th>
+                        <th>@Html.DisplayNameFor(model => model.WebPages[0].MaxResponseTime)</th>
+                    </tr>
                 </thead>
                 <tbody class="table__body">
-                    @for (int i = 0; i < Model.Count; i++)
+                    @for (int i = 0; i < Model.WebPages.Count; i++)
                     { 
                         <tr>
                             <td>@(i + 1)</td>
-                            <td>@Model[i].Host@Model[i].Path</td>
-                            <td>@Model[i].MinResponseTime<text>ms</text></td>
-                            <td>@Model[i].MaxResponseTime<text>ms</text></td>
+                            <td>@Model.Authority@Model.WebPages[i].Path</td>
+                            <td>@Model.WebPages[i].MinResponseTime<text>ms</text></td>
+                            <td>@Model.WebPages[i].MaxResponseTime<text>ms</text></td>
                         </tr>
                     }
                 </tbody>
@@ -31,6 +35,50 @@
         </div>
     </div>
 </div>
+
+<script>
+    window.onload = function () {
+        let canvas = document.getElementById("chart");
+
+        let pageCount = @(Model.WebPages.Count);
+        let labels = [...Array(pageCount).keys()].map(i => i + 1);
+
+        let data = [];
+
+        let tempMin, tempMax;
+        @foreach (var item in Model.WebPages)
+        {
+            @:tempMin = replaceCommasIntoDots(@(item.MinResponseTime));
+            @:tempMax = replaceCommasIntoDots(@(item.MaxResponseTime));
+            @:data.push([tempMin, tempMax]);
+        }
+
+        new Chart(canvas, {
+            type: 'bar',
+            data: {
+            labels: labels,
+                datasets: [
+                    {
+                label: "URLs",
+                        backgroundColor: 'rgb(90, 90, 90)',
+                        data: data
+                    }
+                ]
+            },
+            options: {
+            legend: { display: false },
+                title: {
+                display: true,
+                    text: 'Result of testing'
+                }
+            }
+        });
+    }
+
+    function replaceCommasIntoDots(value) {
+        return value.toString().replace(/,/g, '.');
+    }
+</script>
 
 @section Scripts {
     <script src="~/lib/chartjs/Chart.min.js"></script>

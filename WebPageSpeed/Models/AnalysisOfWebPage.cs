@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace WebPageSpeed.Models
 {
     [NotMapped]
-    public class AnalysisWebPage : IdentifiableEntity
+    public class AnalysisOfWebPage : IdentifiableEntity
     {
         [Required]
         public string Uri { get; set; }

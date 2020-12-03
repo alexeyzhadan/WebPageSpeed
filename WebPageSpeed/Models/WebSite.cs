@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace WebPageSpeed.Models
@@ -10,5 +11,7 @@ namespace WebPageSpeed.Models
 
         [Required]
         public DateTime DateOfAnalysis { get; set; }
+
+        public List<WebPage> WebPages { get; set; }
     }
 }

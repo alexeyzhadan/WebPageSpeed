@@ -9,9 +9,9 @@ namespace WebPageSpeed.Services.Sitemap
         {
             return new List<string> 
             {
-                "https://www.microsoft.com/uk-ua/",
-                "https://templates.office.com/",
-                "https://www.google.com/",
+                "https://gentlemensclub.com.ua/ru/lviv/team",
+                "https://gentlemensclub.com.ua/ru/ivano-frankovsk/team",
+                "https://gentlemensclub.com.ua/ru/bucha/team",
             };
         }
     }
