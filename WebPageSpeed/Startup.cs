@@ -1,15 +1,27 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebPageSpeed.Services.WebPageAnalysis.Extensions;
+using WebPageSpeed.Data.Extensions;
 
 namespace WebPageSpeed
 {
     public class Startup
     {
+        private const string DEFAULT = "Default";
+
+        private readonly IConfiguration _config;
+
+        public Startup(IConfiguration configuration)
+        {
+            _config = configuration;
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddWebPageSpeedContext(_config.GetConnectionString(DEFAULT));
             services.AddWebPageAnalysis();
             services.AddControllersWithViews();
         }
