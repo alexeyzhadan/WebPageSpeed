@@ -37,7 +37,7 @@
 </div>
 
 <script>
-    window.onload = function () {
+    document.addEventListener('DOMContentLoaded', function () {
         let canvas = document.getElementById("chart");
 
         let pageCount = @(Model.WebPages.Count);
@@ -73,7 +73,7 @@
                 }
             }
         });
-    }
+    }, false);
 
     function replaceCommasIntoDots(value) {
         return value.toString().replace(/,/g, '.');

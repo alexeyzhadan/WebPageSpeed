@@ -10,14 +10,20 @@
 <body>
     <div class="wrapper">
 
+        <div class="loader">
+            <div class="loader__wrapper">
+                <div class="loader__spinner"></div>
+            </div>
+        </div>
+
         <div class="header block">
             <div class="container">
                 <div class="header__body">
-                    <a class="header__logo" asp-controller="Main" asp-action="Index">
+                    <a class="header__logo load" asp-controller="Main" asp-action="Index">
                         WebPagePerformance
                     </a>
                     <div class="header__nav nav">
-                        <a class="nav__link link" asp-controller="Main" asp-action="History">History</a>
+                        <a class="nav__link link load" asp-controller="Main" asp-action="History">History</a>
                     </div>
                 </div>
             </div>
@@ -39,6 +45,7 @@
             </div>
         </div>
         @RenderSection("Scripts", required: false)
+        <script src="~/js/main.js"></script>
     </div>
 </body>
 </html>
