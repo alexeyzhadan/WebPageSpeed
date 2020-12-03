@@ -25,26 +25,22 @@ namespace WebPageSpeed.Services.ResponseTimeAnalysis
             _logger = logger;
         }
 
-        public async Task<List<WebPage>> DoAnalysisOfWebSiteAsync(List<string> links)
+        public async Task<List<AnalysisWebPage>> DoAnalysisOfWebSiteAsync(List<string> links)
         {
-            var webPages = new List<WebPage>();
+            var analysisWebPages = new List<AnalysisWebPage>();
 
-            _logger.LogInformation("Analysis was started!");
-
-            await links.ParallelForEachAsync(async link => 
+            await links.ParallelForEachAsync(async link =>
             {
                 var webPage = await DoAnalysisOfWebPageAsync(link);
-                webPages.Add(webPage);
+                analysisWebPages.Add(webPage);
             }, maxDegreeOfParallelism: 10);
 
-            _logger.LogInformation("Analysis was completed!");
-
-            return webPages;
+            return analysisWebPages;
         }
 
-        private async Task<WebPage> DoAnalysisOfWebPageAsync(string uri)
+        private async Task<AnalysisWebPage> DoAnalysisOfWebPageAsync(string uri)
         {
-            var webPage = new WebPage();
+            var analysisWebPages = new AnalysisWebPage();
             var arrayOfResponseTime = new double[NUBMER_OF_ANALYZES];
 
             TimeSpan temp;
@@ -57,11 +53,11 @@ namespace WebPageSpeed.Services.ResponseTimeAnalysis
             _logger.LogInformation(string.Format(
                 "Analysis of web page [{0}]: {1}ms", uri, string.Join("ms, ", arrayOfResponseTime)));
 
-            webPage.Uri = uri;
-            webPage.MinResponseTime = arrayOfResponseTime.Min();
-            webPage.MaxResponseTime = arrayOfResponseTime.Max();
+            analysisWebPages.Uri = uri;
+            analysisWebPages.MinResponseTime = arrayOfResponseTime.Min();
+            analysisWebPages.MaxResponseTime = arrayOfResponseTime.Max();
 
-            return webPage;
+            return analysisWebPages;
         }
     }
 }

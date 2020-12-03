@@ -72,3 +72,5 @@ F:\Others\WebPageSpeed\WebPageSpeed\bin\Debug\netcoreapp3.1\runtimes\win\lib\net
 F:\Others\WebPageSpeed\WebPageSpeed\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.csproj.CoreCompileInputs.cache
 F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.MvcApplicationPartsAssemblyInfo.cache
+F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.csprojAssemblyReference.cache
+F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\Razor\Views\Main\Result.cshtml.g.cs

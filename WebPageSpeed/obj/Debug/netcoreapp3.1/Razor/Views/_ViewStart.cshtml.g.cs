@@ -19,8 +19,15 @@ using WebPageSpeed;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "F:\Others\WebPageSpeed\WebPageSpeed\Views\_ViewImports.cshtml"
+using WebPageSpeed.Models.ViewModel;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"77a2804b95fd303a20a56ec194ea6ca59278fafa", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5e52aacf8920147f561cc91d8000fc191084ecb0", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0e42e0110a7497e0d90c37d8e5d8402a24d1f067", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

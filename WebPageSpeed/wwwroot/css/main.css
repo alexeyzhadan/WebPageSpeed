@@ -1,4 +1,6 @@
 ﻿/* -- Default -- */
+/*This section contains general styles for tag*/
+
 * {
     margin: 0;
     padding: 0;
@@ -17,6 +19,8 @@ input, button {
 /* -- End Default -- */
 
 /* -- Base of page -- */
+/*This section contains styles for _Layout.cshtml and general classes*/
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -60,10 +64,13 @@ input, button {
 
 .nav__link {
     color: rgb(90, 90, 90);
+}
+
+.link {
     position: relative;
 }
 
-    .nav__link:after {
+    .link:after {
         content: '';
         position: absolute;
         left: 0;
@@ -74,7 +81,7 @@ input, button {
         transition: 0.25s ease all;
     }
 
-    .nav__link:hover::after {
+    .link:hover::after {
         width: 100%;
     }
 
@@ -97,6 +104,8 @@ input, button {
 /* -- End Base of page -- */
 
 /* -- Main page -- */
+/*This section contains styles for Main/Index.cshtml*/
+
 .main__input {
     padding: 30px;
 }
@@ -105,6 +114,7 @@ input, button {
     padding: 10px;
     border-radius: 3px;
     font-size: 14px;
+    width: 340px;
 }
 
     .input-block__input:placeholder {
@@ -120,5 +130,59 @@ input, button {
 }
 /* -- End Main page -- */
 
+/* -- Result page -- */
+/*This section contains styles for Main/Result.cshtml*/
+.result__chart-block {
+}
+
+.result__chart-wrapper {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.result__chart {
+    height: 370px;
+    width: 100%;
+}
+
+.result__table-block {
+    margin-top: 30px;
+    padding: 30px;
+}
+
+.result__table-wrapper {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.table {
+    font-size: 16px;
+    width: 100%;
+    border-collapse: collapse;
+}
+    .table td, .table th {
+        padding: 10px 20px;
+    }
+
+.table__head {
+    color: rgb(243, 243, 243);
+}
+
+    .table__head tr {
+        background-color: rgb(90, 90, 90);
+    }
+
+    .table__body tr:nth-of-type(2n+1) {
+        background-color: rgb(255, 255, 255);
+    }
+
+.result__exit {
+    color: rgb(90, 90, 90);
+    margin: auto 20px 0 0;
+}
+/* -- End Result page -- */
+
 /* -- History page -- */
+/*This section contains styles for Main/History.cshtml*/
+
 /* -- End History page -- */

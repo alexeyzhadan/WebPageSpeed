@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using WebPageSpeed.Services.ResponseTimeAnalysis.Extensions;
 using WebPageSpeed.Data.Extensions;
 using WebPageSpeed.Services.Sitemap.Extensions;
+using WebPageSpeed.Services.WebSiteAnalysis.Extensions;
 
 namespace WebPageSpeed
 {
@@ -24,7 +25,8 @@ namespace WebPageSpeed
         {
             services.AddWebPageSpeedData(_config.GetConnectionString(DEFAULT));
             services.AddSitemapDeterminator();
-            services.AddWebPageAnalysis();
+            services.AddResponseTimeAnalyzer();
+            services.AddWebSiteAnalyzer();
             services.AddControllersWithViews();
         }
 

@@ -3,9 +3,9 @@ using WebPageSpeed.Models;
 
 namespace WebPageSpeed.Data.Repositories
 {
-    public class WebPageRepository : IdentifiableEntityRepository<WebPage>, IWebPageRepository
+    public class WebSiteRepository : IdentifiableEntityRepository<WebSite>, IWebSiteRepository
     {
-        public WebPageRepository(WebPageSpeedContext context)
+        public WebSiteRepository(WebPageSpeedContext context)
             : base(context)
         {
         }

@@ -6,7 +6,7 @@ namespace WebPageSpeed.Services.ResponseTimeAnalysis.Extensions
 {
     public static class ResponseTimeAnalysisExtension
     {
-        public static IServiceCollection AddWebPageAnalysis(this IServiceCollection services)
+        public static IServiceCollection AddResponseTimeAnalyzer(this IServiceCollection services)
         {
             services.AddMonitoring();
             services.AddScoped<IResponseTimeAnalyzer, ResponseTimeAnalyzer>();

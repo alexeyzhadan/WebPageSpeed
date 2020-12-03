@@ -2,7 +2,7 @@
 
 namespace WebPageSpeed.Data.Repositories.Interface
 {
-    public interface IWebPageRepository : IIdentifiableEntityRepository<Models.WebPage>
+    public interface IWebSiteRepository : IIdentifiableEntityRepository<WebSite>
     {
     }
 }
