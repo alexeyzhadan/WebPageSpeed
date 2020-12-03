@@ -9,11 +9,8 @@ F:\Others\WebPageSpeed\WebPageSpeed\bin\Debug\netcoreapp3.1\WebPageSpeed.dll
 F:\Others\WebPageSpeed\WebPageSpeed\bin\Debug\netcoreapp3.1\WebPageSpeed.pdb
 F:\Others\WebPageSpeed\WebPageSpeed\bin\Debug\netcoreapp3.1\WebPageSpeed.Views.dll
 F:\Others\WebPageSpeed\WebPageSpeed\bin\Debug\netcoreapp3.1\WebPageSpeed.Views.pdb
-F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.csprojAssemblyReference.cache
 F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.AssemblyInfoInputs.cache
 F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.AssemblyInfo.cs
-F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.csproj.CoreCompileInputs.cache
-F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.MvcApplicationPartsAssemblyInfo.cache
 F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.RazorAssemblyInfo.cache
 F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.RazorAssemblyInfo.cs
 F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.TagHelpers.input.cache
@@ -32,3 +29,7 @@ F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.pdb
 F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.genruntimeconfig.cache
 F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.csproj.CopyComplete
 F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\Razor\Views\Main\Index.cshtml.g.cs
+F:\Others\WebPageSpeed\WebPageSpeed\bin\Debug\netcoreapp3.1\AsyncEnumerable.dll
+F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.csprojAssemblyReference.cache
+F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.csproj.CoreCompileInputs.cache
+F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.MvcApplicationPartsAssemblyInfo.cache

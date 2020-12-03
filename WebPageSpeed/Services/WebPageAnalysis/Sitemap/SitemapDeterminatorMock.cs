@@ -11,7 +11,7 @@ namespace WebPageSpeed.Services.WebPageAnalysis.Sitemap
             {
                 "https://www.microsoft.com/uk-ua/",
                 "https://templates.office.com/",
-                "https://www.google.com/"
+                "https://www.google.com/",
             };
         }
     }

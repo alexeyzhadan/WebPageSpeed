@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 using WebPageSpeed.Services.WebPageAnalysis;
 
 namespace WebPageSpeed.Controllers
@@ -18,9 +19,9 @@ namespace WebPageSpeed.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(string uri)
+        public async Task<IActionResult> Index(string uri)
         {
-            var webPages = _speedAnalyzer.DoAnalysisOfWebSite(uri);
+            var webPages = await _speedAnalyzer.DoAnalysisOfWebSiteAsync(uri);
             return View();
         }
     }

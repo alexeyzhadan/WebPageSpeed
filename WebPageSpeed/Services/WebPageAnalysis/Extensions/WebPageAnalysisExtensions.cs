@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using WebPageSpeed.Services.WebPageAnalysis.Monitoring.Extensions;
+using WebPageSpeed.Services.WebPageAnalysis.MonitoringResponseTime.Extensions;
 using WebPageSpeed.Services.WebPageAnalysis.Sitemap.Extensions;
 
 namespace WebPageSpeed.Services.WebPageAnalysis.Extensions

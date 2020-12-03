@@ -1,10 +1,11 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Dasync.Collections;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebPageSpeed.Models;
-using WebPageSpeed.Services.WebPageAnalysis.Monitoring.Interfaces;
+using WebPageSpeed.Services.WebPageAnalysis.MonitoringResponseTime.Interfaces;
 using WebPageSpeed.Services.WebPageAnalysis.Sitemap.Interfaces;
 
 namespace WebPageSpeed.Services.WebPageAnalysis
@@ -27,7 +28,7 @@ namespace WebPageSpeed.Services.WebPageAnalysis
             _logger = logger;
         }
 
-        public List<WebPage> DoAnalysisOfWebSite(string uri)
+        public async Task<List<WebPage>> DoAnalysisOfWebSiteAsync(string uri)
         {
             var webPages = new List<WebPage>();
 
@@ -36,19 +37,19 @@ namespace WebPageSpeed.Services.WebPageAnalysis
             // determine sitemap
             var links = _sitemapDeterminator.GetListOfUrls(uri);
 
-            //analyse each web pages from sitemap
-            Parallel.ForEach(links, link =>
+            // analyse each web pages from sitemap
+            await links.ParallelForEachAsync(async link => 
             {
-                var webPage = DoAnalysisOfWebPage(link);
+                var webPage = await DoAnalysisOfWebPageAsync(link);
                 webPages.Add(webPage);
-            });
+            }, maxDegreeOfParallelism: 10);
 
             _logger.LogInformation("Analysis was completed!");
 
             return webPages;
         }
 
-        private WebPage DoAnalysisOfWebPage(string uri)
+        private async Task<WebPage> DoAnalysisOfWebPageAsync(string uri)
         {
             var webPage = new WebPage();
             var arrayOfResponseTime = new double[NUBMER_OF_ANALYZES];
@@ -56,7 +57,7 @@ namespace WebPageSpeed.Services.WebPageAnalysis
             TimeSpan temp;
             for (int i = 0; i < NUBMER_OF_ANALYZES; i++)
             {
-                temp = _requestMonitoring.GetResponseTimeAsync(uri).Result;
+                temp = await _requestMonitoring.GetResponseTimeAsync(uri);
                 arrayOfResponseTime[i] = temp.TotalMilliseconds;
             }
 

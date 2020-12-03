@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "uGMuAKbAeP3XZK6sqOUMA+Qj9R8/9MRkZD7PPRB+35FyIaqdwyAx+rnKUbng6Um2+0exuZXmstqSN5C5YiuRkw==",
+  "dgSpecHash": "nI13E7c5jwaSJML+WRy6WMK5E9jW/lwTAs3TW6lah7QDNoI6lFDfRVD9aMnXrN/iysQfYu4/Hz6UIADCLoaoWQ==",
   "success": true,
   "projectFilePath": "F:\\Others\\WebPageSpeed\\WebPageSpeed\\WebPageSpeed.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Alexey Zhadan\\.nuget\\packages\\asyncenumerator\\4.0.2\\asyncenumerator.4.0.2.nupkg.sha512"
+  ],
   "logs": []
 }
