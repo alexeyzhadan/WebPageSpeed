@@ -5,6 +5,6 @@ namespace WebPageSpeed.Services.WebSiteAnalysis.Interface
 {
     public interface IWebSiteAnalyzer
     {
-        Task<WebSite> DoAnalysisAsync(string uri);
+        Task<WebSite> DoAnalysisAsync(string domain);
     }
 }

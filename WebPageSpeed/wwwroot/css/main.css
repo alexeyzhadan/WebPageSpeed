@@ -155,11 +155,18 @@ input, button {
     font-size: 14px;
 }
 
-/* -- End Main page -- */
+.input-block__error {
+    margin: 10px 10px 0 0;
+    font-size: 14px;
+    color: rgb(255, 60, 68);
+}
 
+    .input-block__error ul {
+        list-style-type: none;
+    }
+/* -- End Main page -- */
 /* -- Result page -- */
 /*This section contains styles for Main/Result.cshtml*/
-
 .result__chart-block {
     padding: 30px;
 }

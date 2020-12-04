@@ -9,12 +9,13 @@ namespace WebPageSpeed.Services.Sitemap
 {
     public class SitemapDeterminator : ISitemapDeterminator
     {
-        public async Task<List<Uri>> GetListOfUrlsAsync(string uri)
+        public async Task<List<Uri>> GetListOfUrlsAsync(string domain)
         {
             var listOfUri = new List<Uri>();
             var sitemapQuery = new SitemapQuery();
+
             var sitemaps = await sitemapQuery
-                .GetAllSitemapsForDomainAsync(new Uri(uri).Host);
+                .GetAllSitemapsForDomainAsync(domain);
 
             listOfUri.AddRange(
                 sitemaps.SelectMany(

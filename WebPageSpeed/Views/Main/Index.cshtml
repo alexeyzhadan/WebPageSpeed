@@ -4,9 +4,10 @@
 
 <div class="content__main main">
     <div class="main__input input-block block block--inside">
-        <form asp-action="Index">
-            <input class="input-block__input" placeholder="Enter URL..." name="uri">
+        <form asp-action="Index" class="input-block__form">
+            <input class="input-block__input" placeholder="Enter domain..." name="domain">
             <button class="input-block__button load">Search</button>
         </form>
+        <div class="input-block__error" asp-validation-summary="ModelOnly"></div>
     </div>
 </div>
