@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Net.Http;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using WebPageSpeed.Data.Repositories.Interface;
 using WebPageSpeed.Models;
@@ -38,22 +39,15 @@ namespace WebPageSpeed.Controllers
                 return View();
             }
 
+            if (Uri.CheckHostName(domain) == UriHostNameType.Unknown)
+            {
+                ModelState.AddModelError(string.Empty, "Incorrect input!");
+                return View();
+            }
+
             var webSite = new WebSite();
 
-            try
-            {
-                webSite = await _webSiteAnalyzer.DoAnalysisAsync(domain);
-            }
-            catch (HttpRequestException)
-            {
-                ModelState.AddModelError(string.Empty, "Website not found! Check your entered domain name.");
-                return View();
-            }
-            catch (InvalidOperationException)
-            {
-                ModelState.AddModelError(string.Empty, "Invalid type of sitemap. Analysis is impossible!");
-                return View();
-            }
+            webSite = await _webSiteAnalyzer.DoAnalysisAsync(domain);
 
             if (webSite.Id == ZERO)
             {
@@ -85,15 +79,38 @@ namespace WebPageSpeed.Controllers
             return View(webSite);
         }
 
-        public async Task<IActionResult> History()
+        public async Task<IActionResult> History(int page = 1)
         {
-            var webSites = _webSiteRepository.GetAllOrderedByDateDesc();
+            int pageSize = 20;
+            var webSites = _webSiteRepository.GetAllOrderedByDateDesc((page - 1) * pageSize, pageSize);
             if (webSites == null)
             {
                 return NotFound();
             }
 
+            ViewBag.Page = page;
+            ViewBag.ClosedPage = await DetermineClosedNavigationButtonAsync(page, pageSize);
             return View(await webSites.ToListAsync());
+        }
+
+        // return -1 if need to close Previous button
+        // return 1 if need to close Next button
+        // return 0 if needn't to close
+        public async Task<int> DetermineClosedNavigationButtonAsync(int page, int pageSize)
+        {
+            if (page == 1)
+            {
+                return -1;
+            }
+
+            var count = await _webSiteRepository.GetCountAsync();
+            var totalPages = (int)Math.Ceiling(count / (double)pageSize);
+            if (page == totalPages)
+            { 
+                return 1;
+            }
+
+            return 0;
         }
     }
 }

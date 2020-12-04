@@ -21,9 +21,17 @@ namespace WebPageSpeed.Data.Repositories
             return webSite;
         }
 
-        public IQueryable<WebSite> GetAllOrderedByDateDesc()
+        public IQueryable<WebSite> GetAllOrderedByDateDesc(int skip, int take)
         {
-            return GetAll().OrderByDescending(w => w.DateOfAnalysis);
+            return GetAll()
+                .Skip(skip)
+                .Take(take)
+                .OrderByDescending(w => w.DateOfAnalysis);
+        }
+
+        public async Task<int> GetCountAsync()
+        {
+            return await GetAll().CountAsync();
         }
     }
 }
