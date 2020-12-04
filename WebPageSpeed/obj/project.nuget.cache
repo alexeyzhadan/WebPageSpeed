@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7l8VK1Nnm9bPIGC7aLOOgfwvwrpl4ulcgxUIIHDSeAZj9tVO8iePaxrHfOLRn/s9v8lR+06eMuIf4jjgll36tQ==",
+  "dgSpecHash": "PxglWAMHN0YY3aq6yZ30n/pLXFDAdmzO3/VqCMneQUccStk/p6jRqJcnVimN+PYn2GqsbE6tu5QVPsjzf+fIkg==",
   "success": true,
   "projectFilePath": "F:\\Others\\WebPageSpeed\\WebPageSpeed\\WebPageSpeed.csproj",
   "expectedPackageFiles": [
@@ -104,7 +104,9 @@
     "C:\\Users\\Alexey Zhadan\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Alexey Zhadan\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Alexey Zhadan\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Alexey Zhadan\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\Alexey Zhadan\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\Alexey Zhadan\\.nuget\\packages\\turnersoftware.robotsexclusiontools\\0.5.0\\turnersoftware.robotsexclusiontools.0.5.0.nupkg.sha512",
+    "C:\\Users\\Alexey Zhadan\\.nuget\\packages\\turnersoftware.sitemaptools\\0.6.0\\turnersoftware.sitemaptools.0.6.0.nupkg.sha512"
   ],
   "logs": []
 }

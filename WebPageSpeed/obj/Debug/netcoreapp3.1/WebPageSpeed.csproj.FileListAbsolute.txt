@@ -70,8 +70,10 @@ F:\Others\WebPageSpeed\WebPageSpeed\bin\Debug\netcoreapp3.1\runtimes\win-x86\nat
 F:\Others\WebPageSpeed\WebPageSpeed\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 F:\Others\WebPageSpeed\WebPageSpeed\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 F:\Others\WebPageSpeed\WebPageSpeed\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.csproj.CoreCompileInputs.cache
-F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.MvcApplicationPartsAssemblyInfo.cache
 F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.csprojAssemblyReference.cache
 F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\Razor\Views\Main\Result.cshtml.g.cs
 F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\Razor\Views\Main\History.cshtml.g.cs
+F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.csproj.CoreCompileInputs.cache
+F:\Others\WebPageSpeed\WebPageSpeed\obj\Debug\netcoreapp3.1\WebPageSpeed.MvcApplicationPartsAssemblyInfo.cache
+F:\Others\WebPageSpeed\WebPageSpeed\bin\Debug\netcoreapp3.1\TurnerSoftware.RobotsExclusionTools.dll
+F:\Others\WebPageSpeed\WebPageSpeed\bin\Debug\netcoreapp3.1\TurnerSoftware.SitemapTools.dll

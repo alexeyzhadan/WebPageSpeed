@@ -1504,6 +1504,27 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "TurnerSoftware.RobotsExclusionTools/0.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/TurnerSoftware.RobotsExclusionTools.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/TurnerSoftware.RobotsExclusionTools.dll": {}
+        }
+      },
+      "TurnerSoftware.SitemapTools/0.6.0": {
+        "type": "package",
+        "dependencies": {
+          "TurnerSoftware.RobotsExclusionTools": "0.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/TurnerSoftware.SitemapTools.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/TurnerSoftware.SitemapTools.dll": {}
+        }
       }
     }
   },
@@ -5741,6 +5762,33 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "TurnerSoftware.RobotsExclusionTools/0.5.0": {
+      "sha512": "q/FknJTxX+U50zzKF08IYUG9MxXTQA9ymL7NJGJ6P91wtGpgFGnsln2mOwkZpRmxpSIGRNg2d5ojz+g8Tw1nzg==",
+      "type": "package",
+      "path": "turnersoftware.robotsexclusiontools/0.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.txt",
+        "lib/netstandard2.0/TurnerSoftware.RobotsExclusionTools.dll",
+        "turnersoftware.robotsexclusiontools.0.5.0.nupkg.sha512",
+        "turnersoftware.robotsexclusiontools.nuspec"
+      ]
+    },
+    "TurnerSoftware.SitemapTools/0.6.0": {
+      "sha512": "JZZ6vwF6YPY2EwIMlektPV+RgN5OU4vmMI+q5Ovjb48dKV7ZMkafnw1+J0cyVAjHDbz3cok9Tg9tvh5uYXw9Qw==",
+      "type": "package",
+      "path": "turnersoftware.sitemaptools/0.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.txt",
+        "lib/netstandard2.0/TurnerSoftware.SitemapTools.dll",
+        "lib/netstandard2.1/TurnerSoftware.SitemapTools.dll",
+        "turnersoftware.sitemaptools.0.6.0.nupkg.sha512",
+        "turnersoftware.sitemaptools.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -5748,7 +5796,8 @@
       "AsyncEnumerator >= 4.0.2",
       "Microsoft.EntityFrameworkCore >= 3.1.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.10",
-      "Microsoft.EntityFrameworkCore.Tools >= 3.1.10"
+      "Microsoft.EntityFrameworkCore.Tools >= 3.1.10",
+      "TurnerSoftware.SitemapTools >= 0.6.0"
     ]
   },
   "packageFolders": {
@@ -5805,6 +5854,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[3.1.10, )"
+          },
+          "TurnerSoftware.SitemapTools": {
+            "target": "Package",
+            "version": "[0.6.0, )"
           }
         },
         "imports": [

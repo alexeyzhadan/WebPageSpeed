@@ -15,7 +15,7 @@ namespace WebPageSpeed.Services.ResponseTimeAnalysis.MonitoringResponseTime
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<TimeSpan> GetResponseTimeAsync(string uri)
+        public async Task<TimeSpan> GetResponseTimeAsync(Uri uri)
         {
             var client = _httpClientFactory.CreateClient(StringConstant.MONITORING);
 

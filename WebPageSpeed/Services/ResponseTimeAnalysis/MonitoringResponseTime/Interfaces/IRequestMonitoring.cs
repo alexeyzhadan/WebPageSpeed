@@ -5,6 +5,6 @@ namespace WebPageSpeed.Services.ResponseTimeAnalysis.MonitoringResponseTime.Inte
 {
     public interface IRequestMonitoring
     {
-        Task<TimeSpan> GetResponseTimeAsync(string uri);
+        Task<TimeSpan> GetResponseTimeAsync(Uri uri);
     }
 }

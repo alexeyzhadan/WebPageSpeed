@@ -6,6 +6,6 @@ namespace WebPageSpeed.Services.Sitemap.Extensions
     public static class SitemapDeterminatorExtension
     {
         public static IServiceCollection AddSitemapDeterminator(this IServiceCollection services)
-            => services.AddTransient<ISitemapDeterminator, SitemapDeterminatorMock>();
+            => services.AddTransient<ISitemapDeterminator, SitemapDeterminator>();
     }
 }

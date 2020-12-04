@@ -1,6 +1,7 @@
 ﻿using Dasync.Collections;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,22 +26,22 @@ namespace WebPageSpeed.Services.ResponseTimeAnalysis
             _logger = logger;
         }
 
-        public async Task<List<AnalysisOfWebPage>> DoAnalysisOfWebSiteAsync(List<string> links)
+        public async Task<List<AnalysisOfWebPage>> DoAnalysisOfWebSiteAsync(List<Uri> urls)
         {
-            var analysisWebPages = new List<AnalysisOfWebPage>();
+            var analysisWebPages = new ConcurrentBag<AnalysisOfWebPage>();
 
             _logger.LogInformation("Parallel sending http requests was started.");
-            await links.ParallelForEachAsync(async link =>
+            await urls.ParallelForEachAsync(async url =>
             {
-                var webPage = await DoAnalysisOfWebPageAsync(link);
+                var webPage = await DoAnalysisOfWebPageAsync(url);
                 analysisWebPages.Add(webPage);
             }, maxDegreeOfParallelism: 10);
             _logger.LogInformation("Parallel sending http requests was completed.");
 
-            return analysisWebPages;
+            return analysisWebPages.ToList();
         }
 
-        private async Task<AnalysisOfWebPage> DoAnalysisOfWebPageAsync(string uri)
+        private async Task<AnalysisOfWebPage> DoAnalysisOfWebPageAsync(Uri uri)
         {
             var analysisWebPages = new AnalysisOfWebPage();
             var arrayOfResponseTime = new double[NUBMER_OF_ANALYZES];
@@ -55,7 +56,7 @@ namespace WebPageSpeed.Services.ResponseTimeAnalysis
             _logger.LogInformation(string.Format(
                 "Analysis of web page [{0}]: {1}ms", uri, string.Join("ms, ", arrayOfResponseTime)));
 
-            analysisWebPages.Uri = uri;
+            analysisWebPages.Uri = uri.ToString();
             analysisWebPages.MinResponseTime = arrayOfResponseTime.Min();
             analysisWebPages.MaxResponseTime = arrayOfResponseTime.Max();
 

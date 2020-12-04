@@ -32,11 +32,11 @@ namespace WebPageSpeed.Services.WebSiteAnalysis
         public async Task<WebSite> DoAnalysisAsync(string uriString)
         {
             _logger.LogInformation("Start to determine a sitemap.");
-            var links = _sitemapDeterminator.GetListOfUrls(uriString);
+            var urls = await _sitemapDeterminator.GetListOfUrlsAsync(uriString);
             _logger.LogInformation("The sitemap was determined.");
 
             _logger.LogInformation("Start to analyse a website.");
-            var analysisWebPages = await _responseTimeAnalyzer.DoAnalysisOfWebSiteAsync(links);
+            var analysisWebPages = await _responseTimeAnalyzer.DoAnalysisOfWebSiteAsync(urls);
             _logger.LogInformation("The website was analysed.");
 
             var webSite = new WebSite()

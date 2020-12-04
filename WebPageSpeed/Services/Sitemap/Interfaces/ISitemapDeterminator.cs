@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace WebPageSpeed.Services.Sitemap.Interfaces
 {
     public interface ISitemapDeterminator
     {
-        List<string> GetListOfUrls(string uri);
+        Task<List<Uri>> GetListOfUrlsAsync(string uri);
     }
 }

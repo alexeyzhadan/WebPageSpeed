@@ -55,6 +55,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.10, )"
+            },
+            "TurnerSoftware.SitemapTools": {
+              "target": "Package",
+              "version": "[0.6.0, )"
             }
           },
           "imports": [
