@@ -5,24 +5,26 @@
 
 <div class="content__history history">
     <div class="history__body block block--inside">
-        <table class="history__table table">
-            <thead class="table__head">
-                <tr>
-                    <th>@Html.DisplayNameFor(model => model.Authority)</th>
-                    <th>@Html.DisplayNameFor(model => model.DateOfAnalysis)</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody class="table__body">
-                @foreach (var item in Model)
-                {
+        <div class="history__table-wrapper">
+            <table class="history__table table table--big-font">
+                <thead class="table__head">
                     <tr>
-                        <td>@item.Authority</td>
-                        <td>@item.DateOfAnalysis</td>
-                        <td><a class="history__link link load" asp-action="Result" asp-route-websiteId="@item.Id">Check</a></td>
+                        <th>@Html.DisplayNameFor(model => model.Authority)</th>
+                        <th>@Html.DisplayNameFor(model => model.DateOfAnalysis)</th>
+                        <th></th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody class="table__body">
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Authority</td>
+                            <td>@item.DateOfAnalysis</td>
+                            <td><a class="history__link link load" asp-action="Result" asp-route-websiteId="@item.Id">Check</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

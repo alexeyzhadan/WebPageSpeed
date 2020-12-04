@@ -22,7 +22,7 @@
                 </thead>
                 <tbody class="table__body">
                     @for (int i = 0; i < Model.WebPages.Count; i++)
-                    { 
+                    {
                         <tr>
                             <td>@(i + 1)</td>
                             <td>@Model.Authority@Model.WebPages[i].Path</td>
@@ -41,10 +41,10 @@
         let canvas = document.getElementById("chart");
 
         let pageCount = @(Model.WebPages.Count);
+
         let labels = [...Array(pageCount).keys()].map(i => i + 1);
 
         let data = [];
-
         let tempMin, tempMax;
         @foreach (var item in Model.WebPages)
         {
@@ -56,23 +56,26 @@
         new Chart(canvas, {
             type: 'bar',
             data: {
-            labels: labels,
+                labels: labels,
                 datasets: [
                     {
-                label: "URLs",
+                        label: "URLs",
                         backgroundColor: 'rgb(90, 90, 90)',
                         data: data
                     }
                 ]
             },
             options: {
-            legend: { display: false },
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: { display: false },
                 title: {
-                display: true,
+                    display: true,
                     text: 'Result of testing'
                 }
             }
         });
+
     }, false);
 
     function replaceCommasIntoDots(value) {

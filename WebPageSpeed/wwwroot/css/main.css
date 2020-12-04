@@ -1,6 +1,5 @@
 ﻿/* -- Default -- */
 /*This section contains general styles for tag*/
-
 * {
     margin: 0;
     padding: 0;
@@ -16,13 +15,12 @@ input, button {
     font-family: inherit;
     border: none;
 }
-
 /* -- End Default -- */
+
 
 /* -- Base of page -- */
 /*This section contains styles for _Layout.cshtml and general classes*/
 /*Styles for loader and spinner below, after other styles*/
-
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -100,13 +98,17 @@ input, button {
 }
 
 .table {
-    font-size: 16px;
+    font-size: 12px;
     width: 100%;
     border-collapse: collapse;
 }
 
+.table--big-font {
+    font-size: 16px;
+}
+
     .table td, .table th {
-        padding: 10px 20px;
+        padding: 10px 10px;
     }
 
 .table__head {
@@ -126,12 +128,11 @@ input, button {
     font-size: 12px;
     padding: 20px;
 }
-
 /* -- End Base of page -- */
+
 
 /* -- Main page -- */
 /*This section contains styles for Main/Index.cshtml*/
-
 .main__input {
     padding: 30px;
 }
@@ -165,6 +166,8 @@ input, button {
         list-style-type: none;
     }
 /* -- End Main page -- */
+
+
 /* -- Result page -- */
 /*This section contains styles for Main/Result.cshtml*/
 .result__chart-block {
@@ -172,13 +175,9 @@ input, button {
 }
 
 .result__chart-wrapper {
-    max-height: 500px;
-    overflow-y: auto;
-}
-
-.result__chart {
-    height: 370px;
-    width: 100%;
+    height: 500px;
+    max-width: 1100px;
+    overflow-x: auto;
 }
 
 .result__table-block {
@@ -188,19 +187,75 @@ input, button {
 
 .result__table-wrapper {
     max-height: 500px;
+    max-width: 1100px;
     overflow: auto;
 }
-
 /* -- End Result page -- */
+
 
 /* -- History page -- */
 /*This section contains styles for Main/History.cshtml*/
-
 .history__body {
     padding: 30px;
 }
 
+.history__table-wrapper {
+    max-width: 1100px;
+    overflow-x: auto;
+}
 /* -- End History page -- */
+
+
+/* -- Media -- */
+@media (max-width: 1150px) {
+    .result__table-wrapper,
+    .result__chart-wrapper,
+    .history__table-wrapper {
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 900px) {
+    .result__table-wrapper,
+    .result__chart-wrapper,
+    .history__table-wrapper {
+        max-width: 600px;
+    }
+
+    .result__chart-wrapper {
+        height: 300px;
+    }
+}
+
+@media (max-width: 690px) {
+    .result__table-wrapper,
+    .result__chart-wrapper,
+    .history__table-wrapper {
+        max-width: 450px;
+    }
+
+    .table--big-font{
+        font-size: 12px;
+    }
+
+    .input-block__input {
+        width: 250px;
+    }
+}
+
+@media (max-width: 530px) {
+    .header__logo {
+        font-size: 18px;
+    }
+
+    .result__table-wrapper,
+    .result__chart-wrapper,
+    .history__table-wrapper{
+        max-width: 280px;
+    }
+}
+/* -- End Media -- */
+
 
 /* -- Loader -- */
 .loader {
