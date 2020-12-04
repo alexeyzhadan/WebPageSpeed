@@ -8,16 +8,21 @@ namespace WebPageSpeed.Data.Repositories
 {
     public class WebSiteRepository : IdentifiableEntityRepository<WebSite>, IWebSiteRepository
     {
+        private const double TWO = 2.0;
+
         public WebSiteRepository(WebPageSpeedContext context)
             : base(context)
         {
         }
 
-        public async Task<WebSite> GetByIdWithWebPagesAsync(long id)
+        public async Task<WebSite> GetByIdWithOrderedWebPagesAsync(long id)
         {
-            return await GetAll()
+            var webSite = await GetAll()
                 .Include(w => w.WebPages)
                 .SingleOrDefaultAsync(w => w.Id == id);
+            webSite.WebPages = webSite.WebPages.OrderByDescending(w =>
+                (w.MaxResponseTime + w.MinResponseTime) / TWO).ToList();
+            return webSite;
         }
 
         public IQueryable<WebSite> GetAllOrderedByDateDesc()

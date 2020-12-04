@@ -8,7 +8,9 @@ namespace WebPageSpeed.Services.ResponseTimeAnalysis.MonitoringResponseTime.Exte
         public static IServiceCollection AddMonitoring(this IServiceCollection services)
         {
             services.AddScoped<MonitoringHandler>();
-            services.AddHttpClient(StringConstant.MONITORING)
+            services.AddHttpClient(
+                    StringConstant.MONITORING, 
+                    options => options.DefaultRequestHeaders.ConnectionClose = true)
                 .AddHttpMessageHandler<MonitoringHandler>();
             services.AddScoped<IRequestMonitoring, RequestMonitoring>();
 

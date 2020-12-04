@@ -29,11 +29,13 @@ namespace WebPageSpeed.Services.ResponseTimeAnalysis
         {
             var analysisWebPages = new List<AnalysisOfWebPage>();
 
+            _logger.LogInformation("Parallel sending http requests was started.");
             await links.ParallelForEachAsync(async link =>
             {
                 var webPage = await DoAnalysisOfWebPageAsync(link);
                 analysisWebPages.Add(webPage);
             }, maxDegreeOfParallelism: 10);
+            _logger.LogInformation("Parallel sending http requests was completed.");
 
             return analysisWebPages;
         }

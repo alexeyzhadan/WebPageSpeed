@@ -31,7 +31,8 @@ namespace WebPageSpeed.Controllers
 
         public async Task<ActionResult> Result(long websiteId)
         {
-            var webSite = await _webSiteRepository.GetByIdWithWebPagesAsync(websiteId);
+            var webSite = await _webSiteRepository.GetByIdWithOrderedWebPagesAsync(websiteId);
+
             if (webSite == null)
             {
                 return NotFound();

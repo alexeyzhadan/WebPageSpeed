@@ -6,7 +6,7 @@ namespace WebPageSpeed.Data.Repositories.Interface
 {
     public interface IWebSiteRepository : IIdentifiableEntityRepository<WebSite>
     {
-        Task<WebSite> GetByIdWithWebPagesAsync(long id);
+        Task<WebSite> GetByIdWithOrderedWebPagesAsync(long id);
         IQueryable<WebSite> GetAllOrderedByDateDesc();
     }
 }
