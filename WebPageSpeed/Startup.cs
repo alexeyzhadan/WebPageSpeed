@@ -37,6 +37,8 @@ namespace WebPageSpeed
                 app.UseDeveloperExceptionPage();
             }
 
+            app.EnsureMigrationOfContext();
+
             app.UseStaticFiles();
 
             app.UseRouting();
