@@ -93,17 +93,23 @@ namespace WebPageSpeed.Controllers
             return View(await webSites.ToListAsync());
         }
 
+        // return 2 if need to close both Previous and Next button
         // return -1 if need to close Previous button
         // return 1 if need to close Next button
         // return 0 if needn't to close
         public async Task<int> DetermineClosedNavigationButtonAsync(int page, int pageSize)
         {
+            var count = await _webSiteRepository.GetCountAsync();
+            if (count <= pageSize)
+            {
+                return 2;
+            }
+
             if (page == 1)
             {
                 return -1;
             }
 
-            var count = await _webSiteRepository.GetCountAsync();
             var totalPages = (int)Math.Ceiling(count / (double)pageSize);
             if (page == totalPages)
             { 

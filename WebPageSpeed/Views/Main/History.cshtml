@@ -27,11 +27,11 @@
             </table>
         </div>
         <div class="history__nav">
-            @if (ViewBag.ClosedPage != -1)
+            @if (ViewBag.ClosedPage != 2 && ViewBag.ClosedPage != -1)
             {
                 <a class="history__nav-link" asp-action="History" asp-route-page="@(ViewBag.Page - 1)">Previous</a>
             }
-            @if (ViewBag.ClosedPage != 1)
+            @if (ViewBag.ClosedPage != 2 && ViewBag.ClosedPage != 1)
             {
                 <a class="history__nav-link" asp-action="History" asp-route-page="@(ViewBag.Page + 1)">Next</a>
             }
